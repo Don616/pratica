@@ -1,9 +1,15 @@
+"""
+Programa que converte algum número digitado em hora, minuto e segundo respectivamente.
+Sujeito a melhorias.
+"""
+
 segundo = 0
 minuto = 0
 hora = 0
 
 time = (input("Digite algum número, que lhe direi quanto tempo dá: "))
-    
+
+# Conversão do número digitado, para minuto, segundo ou hora.    
 if time.isnumeric():
     time = int(time)
     while time >= 60:
