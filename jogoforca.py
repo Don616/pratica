@@ -15,14 +15,7 @@ while True:
         continue
 
     # Palavras aleatórias que serão escolhidas para o jogo.
-    palavra = """arroz feijao batata macarrao tempero queijo caldo goiaba abacate tomate
-                 papel livro sorvete casa estudante biblioteca teclado frango estupido 
-                 dicionario paralelepipedo leite vaca esperto gambiarra mouse monitor computador 
-                 escola internet soldado sol ovo eu ela sim nao pao cao rio palavra tempestade 
-                 aluguel predio telescopio milionario fone cloro bicicleta astronauta lua doutor 
-                 medico mar cortina ceu montanha carro refrigerante prato rotina sentimento amor 
-                 paz uniao sal pimenta espirito copo agua solidariedade farmacia sindrome medo nos 
-                 sempre convidado luz garrafa hipopotamo sociedade"""
+    palavra = "arroz feijao batata macarrao tempero queijo caldo goiaba abacate tomate papel livro sorvete casa estudante biblioteca teclado frango estupido dicionario paralelepipedo leite vaca esperto gambiarra mouse monitor computador escola internet soldado sol ovo eu ela sim nao pao cao rio palavra tempestade aluguel predio telescopio milionario fone cloro bicicleta astronauta lua doutor medico mar cortina ceu montanha carro refrigerante prato rotina sentimento amor paz uniao sal pimenta espirito copo agua solidariedade farmacia sindrome medo nos sempre convidado luz garrafa hipopotamo sociedade"
 
     lista = palavra.split(" ")
     secreto = random.choice(lista)
