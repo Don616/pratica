@@ -1,10 +1,12 @@
 import random
+import os
 """
 Jogo de forca feito em Python
 """
 sair = "y"
 while True:
-    
+
+    os.system('cls' if os.name == 'nt' else 'clear')
     # Pergunta se o usuário deseja continuar jogando ou sair
     if sair == 'y':
         pass
@@ -31,15 +33,20 @@ while True:
     else:
         chances = 7
 
-    print("-"*30)
+    print("-" * 30)
     print()
-    print(f"Bem vindo ao jogo da Força.\nVocê tem {chances} chances para acertar uma palavra gerada aleatoriamente. \nNenhuma das letras contém pontuação, para ficar mais fácil de adivinhar.\nBoa Sorte!")
+    print(
+        f"Bem vindo ao jogo da Força.\nVocê tem {chances} chances para acertar uma palavra gerada aleatoriamente. \nNenhuma das letras contém pontuação, para ficar mais fácil de adivinhar.\nBoa Sorte!"
+    )
     print()
-    print("-"*30)
+    input("Pressione Enter para continuar...")
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print("-" * 30)
     while True:
-        
+
         # Bloco de código para forçar o usuário a digitar somente letras e somente uma por vez.
-        letra = input("Digite uma letra para tentar adivinhar a palavra secreta: ")
+        letra = input(
+            "Digite uma letra para tentar adivinhar a palavra secreta: ")
         if not letra.isalpha():
             print()
             print("Digite somente letras!")
@@ -55,28 +62,30 @@ while True:
         if letra not in secreto:
             chances -= 1
             if chances == 0:
+                os.system('cls' if os.name == 'nt' else 'clear')
                 print()
                 print(f"Suas chances acabaram, você perdeu. A palavra era {secreto}.")
                 print()
                 break
 
         print()
-        print(f"Você ainda tem {chances} chances ao total")
-        
-        
+
         # Adiciona as letras digitadas na variável "digitadas" e exclui as erradas.
         digitadas.append(letra)
 
         if letra in secreto:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print()
             print(f'Você acertou uma letra: {letra}.')
             print()
         else:
+            os.system('cls' if os.name == 'nt' else 'clear')
             print()
             print(f'A letra que você digitou "{letra}" está ERRADA!')
             print()
+            print(f"Chances restantes: {chances}.")
             digitadas.pop()
-        
+
         # Ocultando e revelando a letra secreta.
         temp = ""
         for letra_secreta in secreto:
@@ -87,7 +96,9 @@ while True:
         # Para quando o usuário conseguir completar a frase.
         if temp == secreto:
             print()
-            print(f"Você acertou a palavra! Parabéns!!! A palavra secreta era: {secreto}")
+            print(
+                f"Você acertou a palavra! Parabéns!!! A palavra secreta era: {secreto}"
+            )
             print()
             print()
             break
@@ -98,23 +109,7 @@ while True:
             print()
 
     # Pergunta se o usuário deseja continuar jogando ou sair
-    sair = input("Deseja jogar outra vez? Digite 'y' para continuar e 'n' para sair: ")
+    sair = input(
+        "Deseja jogar outra vez? Digite 'y' para continuar e 'n' para sair: ")
     if sair == True:
         continue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
