@@ -1,7 +1,6 @@
 """
 Um simples programa que verifica o tamanho do nome digitado.
 """
-nome = ""
 nome = input("Olá, escreva seu nome por favor: ")
 while not nome.isalpha():
     nome = input("Digite apenas letras: ")
