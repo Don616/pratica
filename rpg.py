@@ -9,7 +9,10 @@ print("=" *20)
 print("RESULTADO:")
 print("-" *20)
 lvlfinal = lvlatual
-
+'''
+No sistema, se a experiência ganha pelo jogador for igual ao seu level, ele sobe de nível.
+E para cada nível que ele sobe, ganha 1 ponto multiplicado pelo seu grau."
+'''
 if(lvlatual > xp):
 	print("Você não tem exp pra upar. Seu burro!!!")
 else:
