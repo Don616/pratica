@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora de Soma</title>
+    <style>
+        h1{
+            background-color: blue;
+            font: Verdana;
+
+
+        }
+        body {
+            font: normal 15pt Verdana;
+            width: 200px;
+            background-color: grey;
+        }
+        input{
+            font: normal 15pt Verdana;
+            width: 200px;
+        }
+        div#res {
+            margin-top: 20px;
+            background-color: darkred;
+        }
+        input#somar{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha dois números para somar.</h1>
+    <input type="number" name="" id="n1"> +
+    <input type="number" name="" id="n2">
+    <input id='somar' type="button" value="Somar" onclick="somar()">
+    <div id='res'>Resultado</div>
+    <script>
+        function somar(){
+            var tn1 = window.document.querySelector('input#n1')
+            var tn2 = window.document.querySelector('input#n2')
+            var result = window.document.querySelector('div#res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var soma = n1 + n2
+            result.innerHTML = `A soma entre ${n1} e ${n2} é igual a: <strong>${soma}</strong>`
+
+
+        }
+    </script>
+</body>
+</html>
