@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title id='titulo'>Teste</title>
+    <div id='a1' onmousemove="move1()" onmouseout="sair1()" onclick="up1()"></div>
+    <div id='a2' onmousemove="move2()" onmouseout="sair2()" onclick="up2()"></div>
+    <div id='a3' onmousemove="move3()" onmouseout="sair3()" onclick="up3()"></div>
+    <div id='a4' onmousemove="move4()" onmouseout="sair4()" onclick="up4()"></div>
+    <div id='a5' onmousemove="move5()" onmouseout="sair5()" onclick="up5()"></div>
+    <style>
+        div#a1{
+            width: 50px;
+            height: 50px;
+            background-color: darkgreen; 
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        div#a2{
+            width: 50px;
+            height: 50px;
+            background-color: darkgreen; 
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        div#a3{
+            width: 50px;
+            height: 50px;
+            background-color: darkgreen; 
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        div#a4{
+            width: 50px;
+            height: 50px;
+            background-color: darkgreen; 
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        div#a5{
+            width: 50px;
+            height: 50px;
+            background-color: darkgreen; 
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function move1() {
+            window.document.getElementById('a2').style.backgroundColor = "darkblue"
+        }
+        function sair1() {
+            window.document.getElementById('a1').style.backgroundColor = "darkred"
+        }
+        function up1() {
+            window.document.getElementById('a1').style.backgroundColor = "darkgreen"
+        }
+    
+        function move2() {
+            window.document.getElementById('a4').style.backgroundColor = "darkred"
+        }
+        function sair2() {
+            window.document.getElementById('a5').style.backgroundColor = "darkblue"
+        }
+        function up2() {
+            window.document.getElementById('a2').style.backgroundColor = "darkgreen"
+        }
+
+        function move3() {
+            window.document.getElementById('a1').style.backgroundColor = "darkgreen"
+        }
+        function sair3() {
+            window.document.getElementById('a3').style.backgroundColor = "darkred"
+        }
+        function up3() {
+            window.document.getElementById('a3').style.backgroundColor = "darkgreen"
+        }
+
+        function move4() {
+            window.document.getElementById('a3').style.backgroundColor = "darkgreen"
+        }
+        function sair4() {
+            window.document.getElementById('a4').style.backgroundColor = "darkblue"
+        }
+        function up4() {
+            window.document.getElementById('a4').style.backgroundColor = "darkgreen"
+        }
+
+        function move5() {
+            window.document.getElementById('a2').style.backgroundColor = "darkred"
+        }
+        function sair5() {
+            window.document.getElementById('a5').style.backgroundColor = "darkgreen"
+        }
+        function up5() {
+            window.document.getElementById('a5').style.backgroundColor = "darkgreen"
+        }
+    </script>
+</body>
+</html>

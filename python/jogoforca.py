@@ -83,7 +83,7 @@ while True:
             if letra_secreta in digitadas:
                 temp += letra_secreta
             else:
-                temp += "_"
+                temp += "-"
         # Para quando o usuário conseguir completar a frase.
         if temp == secreto:
             print()
