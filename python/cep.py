@@ -8,8 +8,10 @@ def retorna_cep(num):
     while not len(num) == 8:
         num = input("Inválido. O 'CEP' deve conter apenas 8 digitos. Digite novamente: ")
 
-    req = requests.get("https://viacep.com.br/ws/{}/json/".format(num))
+    req = requests.get(f"https://viacep.com.br/ws/{num}/json/")
     json_list = req.json()
+    if "erro" in json_list.keys():
+        return print("\nCEP inexistente ou não encontrado.\n")
     saida = ""
     for k, v in json_list.items():
         saida += (f"{k.title()}: {v}\n")
