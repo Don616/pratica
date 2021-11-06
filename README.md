@@ -1,2 +1,9 @@
-# pratica
-Para guardar exercícios de diversas linguagens
+# Pratica
+---
+
+### Linguagens praticadas neste repositório:
+
+- Java;
+- Python;
+- ShellScript;
+- Web (JS, CSS, HTML);

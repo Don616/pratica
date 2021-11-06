@@ -1,0 +1,25 @@
+body{
+    background-color: deepskyblue;
+    font: normal 15pt Verdana;
+}
+header{
+    background-color: #0f692a;
+    text-align: center;
+    box-shadow: 2px 2px 8px green;
+    
+}
+section{
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 15px darkred;
+
+}
+footer{
+
+    text-align: center;
+    font: normal 20px Arial;
+
+}

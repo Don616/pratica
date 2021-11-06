@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jogo do Coelho</title>
+    <style>
+        #coelho {
+            height: 60px;
+            width: 60px;
+            margin: 50px 650px;
+        }
+        #ovo {
+            display: none;
+            height: 30px;
+            width: 30px;
+            z-index: -1;
+        }
+        #blackhole {
+            height: 140px;
+            width: 140px;
+            position: absolute;
+            display: none;
+            z-index: -1;
+        }
+
+    </style>
+</head>
+<body onload="carregar()">
+    
+    <img onmouseover="tocarMouse()" id="coelho" src="" alt="animal">
+    <img onclick="clicarOvo()" id="ovo" src="" alt="">
+    <img id="blackhole" src="" alt="">
+    
+</body>
+</html>
+<script>
+    var vezes = 0;
+    var quant_eggs = 0;
+    var easter_usados = '';
+    var x,y,pos_ovo;
+
+    function carregar(){
+        
+        coelho.src = `https://cdn.pixabay.com/photo/2016/08/17/22/28/rabbit-1601690_960_720.png`
+        blackhole.src = `https://static.thenounproject.com/png/12582-200.png`
+
+    }
+
+    function tocarMouse(){
+
+        x = (Math.random() * 1299 + 1).toFixed(0);
+        y = (Math.random() * 599 + 1).toFixed(0);
+       
+        coelho.style.margin = `${y}px ${x}px`
+        coelho.style.position = 'absolute';
+        easterEggs(x,y)
+        
+        
+        vezes++;
+        /*
+        if(vezes == 10){
+            mole.style.display = 'block';
+            imagem.src = `https://creazilla-store.fra1.digitaloceanspaces.com/emojis/45878/turtle-emoji-clipart-md.png`
+        }*/
+        
+
+    }
+
+    function easterEggs(x,y){
+
+        var chance = (Math.random() * 0).toFixed(0);
+
+        if(chance == 0){
+
+            if(pos_ovo == undefined){
+
+
+                ovo.src = `https://images.vexels.com/media/users/3/162119/isolated/lists/c12b76c5c78edefcb935f583830190bf-ovo-de-pascoa-pintado-de-ovo-de-pascoa-padrao-de-ovo-de-pascoa-mancha-circulo-silhueta-listrada.png`;
+                pos_ovo = `${Number(y)+20}px ${Number(x)+30}px`
+                ovo.style.margin = pos_ovo;
+                ovo.style.position = 'absolute'
+                ovo.style.display = 'block';
+                
+
+            }
+            
+        }
+            
+    }
+
+    function clicarOvo(){
+
+        ovo.style.display = 'none';
+        pos_ovo = undefined;
+
+
+        var sorteio = (Math.random() * easter_usados.length).toFixed(0);
+        console.log(blackhole.style.display)
+
+        if(sorteio == 0){
+            easterBlackHole()
+
+        }
+        
+    }
+
+    function easterBlackHole(){
+        
+        if(blackhole.style.display != 'block'){
+
+            blackhole.style.display = 'block';
+        }
+        
+    }
+
+
+
+</script>

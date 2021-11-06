@@ -1,0 +1,12 @@
+body{
+    background-image: image("matrix.png")
+}
+header{
+    text-align: center;
+    
+
+}
+footer{
+    text-align: center;
+    color: black;
+}
