@@ -9,11 +9,11 @@ ANO_ATUAL=$(date +%Y)
 IDADE=$(echo "$ANO_ATUAL - $ANO" | bc -l)
 echo "${NOME}, você tem ${IDADE} anos!" 
 
-MENSAGEM="Ok, vá à merda!"
+MENSAGEM="Ok, Bom dia!"
 
 read -p "Deseja ler nossa mensagem? (y/n) " CONFIRM1
 if [ ${CONFIRM1} = "y" ]
 then echo ${MENSAGEM}
-else echo "Então vai toma no cu!"
+else echo "Então vá se ferrar!"
 fi
 
