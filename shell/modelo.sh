@@ -3,9 +3,10 @@
 #-VARIAVEIS BASICAS-----------------------------------------------------#
 
 NOME_PROGRAMA=$(basename $0 | cut -d. -f1)
-VERSAO="1.0"
+VERSAO="1.5"
 AUTOR="Don616"
 DESCRICAO="~~ EDITE AQUI COM SUA DESCRIÇÃO ~~"
+varEXE=$1 # Se não tiver parametros ela executa normal
 
 #-VARIAVEIS PARAMETRO----------------------------------------------------#
 
@@ -37,4 +38,8 @@ while test -n "$1"; do
 
 done
 
-#--------------------------------------------------------------------------#
+#-EXECUÇÃO-------------------------------------------------------------------------#
+
+if [ -z "$varEXE" ]; then
+	echo "Coloca o main do programa aqui"
+fi

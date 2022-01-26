@@ -7,7 +7,7 @@ VERSAO="1.0"
 AUTOR="Don616"
 DESCRICAO=" Mostra o modelo do computador e a geração do processador + 
 o sistema operacional onde ele está rodando."
-varCONTROL=$1
+varEXE=$1 # Se não tiver parametros ela executa normal
 
 #-VARIAVEIS PARAMETRO----------------------------------------------------#
 
@@ -43,7 +43,7 @@ done
 
 #-EXECUÇÃO-------------------------------------------------------------------------#
 
-if [ -z "$varCONTROL" ]; then
+if [ -z "$varEXE" ]; then
 	echo "
 Usuário: $USER
 Sistema Operacional: $varNOME_OS
