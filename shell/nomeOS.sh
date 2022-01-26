@@ -5,6 +5,7 @@
 NOME_PROGRAMA=$(basename $0 | cut -d. -f1)
 VERSAO="1.0"
 AUTOR="Don616"
+CONTATO="https://github.com/Don616"
 DESCRICAO=" Mostra o modelo do computador e a geração do processador + 
 o sistema operacional onde ele está rodando."
 varEXE=$1 # Se não tiver parametros ela executa normal

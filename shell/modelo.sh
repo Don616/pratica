@@ -2,10 +2,11 @@
 
 #-VARIAVEIS BASICAS-----------------------------------------------------#
 
-NOME_PROGRAMA=$(basename $0 | cut -d. -f1)
+NOME_PROGRAMA="$(basename $0 | cut -d. -f1)"
 VERSAO="1.5"
 AUTOR="Don616"
-DESCRICAO="~~ EDITE AQUI COM SUA DESCRIÇÃO ~~"
+CONTATO="https://github.com/Don616"
+DESCRICAO="Modelo base para outros scripts shellscript"
 varEXE=$1 # Se não tiver parametros ela executa normal
 
 #-VARIAVEIS PARAMETRO----------------------------------------------------#
@@ -23,20 +24,25 @@ Instruções para Ajuda:
 "
 
 
+
 #-LOOP PARA RODAR MAIS PARAMETROS---------------------------------------------------#
 
 while test -n "$1"; do
 
 	case $1 in
 
-		-i | --info) echo "$varINFO" 												;;		
-		-h | --help) echo "$varHELP" 												;;
-				  *) echo "\nComando inválido. Digite -h ou --help para ajuda\n"	;;
+		-i |  --info)  	echo "$varINFO" 											;;		
+		-h |  --help)  	echo "$varHELP"												;;
+		-d | --debug)	bash -x $0													;;
+				   *) 	echo "\nComando inválido. Digite -h ou --help para ajuda\n"	;;
 
 	esac
 	shift
 
 done
+#-FUNÇÕES--------------------------------------------------------------------------#
+
+
 
 #-EXECUÇÃO-------------------------------------------------------------------------#
 
