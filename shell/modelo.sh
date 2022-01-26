@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-#-VARIAVEIS BASICAS-----------------------------------------------------#
+#-VARIAVEIS INFO-----------------------------------------------------#
 
 NOME_PROGRAMA="$(basename $0 | cut -d. -f1)"
 VERSAO="1.5"
@@ -22,6 +22,8 @@ Instruções para Ajuda:
 	-h ou --help: Abre a ajuda de comandos do usuário;
 	-i ou --info: Informações sobre o programa;
 "
+
+#-TESTES--------------------------------------------------------------------------#
 
 
 
