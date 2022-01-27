@@ -6,7 +6,7 @@ NOME_PROGRAMA="$(basename $0 | cut -d. -f1)"
 VERSAO="1.5"
 AUTOR="Don616"
 CONTATO="https://github.com/Don616"
-DESCRICAO="Modelo base para outros scripts shellscript"
+DESCRICAO="Cria relatórios diários para o usuário"
 varEXE=$1 # Se não tiver parametros ela executa normal
 
 #-VARIAVEIS PARAMETRO----------------------------------------------------#
@@ -22,10 +22,11 @@ Instruções para Ajuda:
 	-h ou --help: Abre a ajuda de comandos do usuário;
 	-i ou --info: Informações sobre o programa;
 "
+varFILE="/home/$USER/relatorio.md"
 
 #-TESTES--------------------------------------------------------------------------#
 
-
+if [ ! -e "$varFILE" ]; then touch $varFILE; fi
 
 #-LOOP PARA RODAR MAIS PARAMETROS---------------------------------------------------#
 
@@ -49,5 +50,10 @@ done
 #-EXECUÇÃO-------------------------------------------------------------------------#
 
 if [ -z "$varEXE" ]; then
-	# Coloca o main do programa aqui
+
+	echo " " >> $varFILE
+	date "+%A, %d %B %Y" >> $varFILE
+	echo " " >> $varFILE
+	vim $varFILE
+
 fi
