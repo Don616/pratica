@@ -6,7 +6,7 @@ NOME_PROGRAMA="$(basename $0 | cut -d. -f1)"
 VERSAO="1.0"
 AUTOR="Don616"
 CONTATO="https://github.com/Don616"
-DESCRICAO="Mostra os repositórios de um usuario no Github"
+DESCRICAO="Mostra os repositórios de um usuario do Github"
 varEXE=$1 # Se não tiver parametros ela executa normal
 
 #-VARIAVEIS PARAMETRO----------------------------------------------------#
@@ -26,7 +26,7 @@ Instruções para Ajuda:
 
 #-TESTES--------------------------------------------------------------------------#
 
-[ ! -x $(which lynx) ] && echo 'sim'
+[ ! -x $(which lynx) ] && sudo apt install lynx -y
 
 #-LOOP PARA RODAR MAIS PARAMETROS---------------------------------------------------#
 
