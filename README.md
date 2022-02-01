@@ -1,7 +1,7 @@
-# Pratica
+# Prática
 ---
-
-<img style='text-align:center;' src="https://upload.wikimedia.org/wikipedia/en/4/49/Pents08.jpg" alt="oito de moedas tarot">
+## Repositório com objetivo de armazenar exercícios e práticas de diversas tecnologias.
+---
 
 ### Linguagens praticadas neste repositório:
 
@@ -9,3 +9,4 @@
 - Python;
 - ShellScript;
 - Web (JS, CSS, HTML);
+- PowerShell
