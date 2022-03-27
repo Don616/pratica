@@ -8,7 +8,7 @@ public class ClasseDeTeste{
 	
 		ClasseASerTestada obj = new ClasseASerTestada();
 		String retornoDoMetodo = obj.metodoASerTestado();
-		asserEquals("teste", retornoDoMetodo);
+		assertEquals("teste", retornoDoMetodo);
 	
 	}
 
