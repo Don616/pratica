@@ -4,9 +4,9 @@
 
 NOME_PROGRAMA="$(basename $0 | cut -d. -f1)"
 VERSAO="1.0"
-AUTOR="Don616"
-CONTATO="https://github.com/Don616"
-DESCRICAO="Mostra os repositórios de um usuario do Github"
+AUTOR="Totem System"
+CONTATO="https://github.com/leticiaNCosta18/TotemSystem"
+DESCRICAO="Script para executar o .jar do projeto"
 varEXE=$1 # Se não tiver parametros ela executa normal
 
 #-VARIAVEIS PARAMETRO----------------------------------------------------#
@@ -23,10 +23,9 @@ Instruções para Ajuda:
 	-i ou --info: Informações sobre o programa;
 "
 
-
 #-TESTES--------------------------------------------------------------------------#
 
-[ ! -x $(which lynx) ] && sudo apt install lynx -y
+
 
 #-LOOP PARA RODAR MAIS PARAMETROS---------------------------------------------------#
 
@@ -37,7 +36,7 @@ while test -n "$1"; do
 		-i |  --info)  	echo "$varINFO" 											;;		
 		-h |  --help)  	echo "$varHELP"												;;
 		-d | --debug)	bash -x $0													;;
-				   *) 	echo "\nComando inválido. Digite -h ou --help para ajuda\n"	;;
+		 *) 	echo "\nComando inválido. Digite -h ou --help para ajuda\n"	;;
 
 	esac
 	shift
@@ -45,25 +44,51 @@ while test -n "$1"; do
 done
 #-FUNÇÕES--------------------------------------------------------------------------#
 
+instalar_pacotes(){
 
+	echo "\nInstalando e verificando todos os pacotes...\n"
+	sleep 1
+	sudo apt-get update && sudo apt-get upgrade -y
+	[ ! -x $(which java) ] && sudo apt-get install openjdk-11-jdk
+	sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
+	[ ! -x $(which git) ] && sudo apt-get install git-all
+
+}
+criar_urubu100(){
+
+	echo "\nCriando usuário urubu100...\n"
+	sleep 1
+	sudo su
+	exit
+	adduser urubu100
+	usermod -aG sudo urubu100
+	su urubu100
+	exit
+	cd
+
+}
+clonar_github(){
+
+
+	echo "\nClonando github e criando pastas...\n"
+	cd
+	wget https://github.com/leticiaNCosta18/TotemSystem/blob/main/Java/totemSistem/out/artifacts/totemSitem_jar/totemSitem.jar
+	mkdir totem && mv ./totemSitem.jar totem/totemsystem.jar && cd totem
+	echo "\nTudo pronto meu chefe...\n"
+}
+
+main(){
+
+
+	criar_urubu100
+	instalar_pacotes
+	clonar_github
+
+}
 
 #-EXECUÇÃO-------------------------------------------------------------------------#
 
 if [ -z "$varEXE" ]; then
-	echo "Digite o usuário do Github que deseja mostrar os repositórios: "
-	read USERGITHUB
-	echo " "
-	varSTATUSCODE="$(curl -Is https://github.com/$USERGITHUB | head -1 | cut -d' ' -f2)"
-	if [ $varSTATUSCODE -eq 200 ]; then
-
-		echo "Buscando repositórios encontrados para o usuario $USERGITHUB..."
-		sleep 1
-		echo " "
-		lynx -source "https://github.com/$USERGITHUB" | grep '<span class="repo" title="' | cut -d'"' -f4
-		echo " "
-	else
-		echo " "
-		echo "Usuario não encontrado"
-		echo " "
-	fi
+	# Coloca o main do programa aqui
+	main
 fi
