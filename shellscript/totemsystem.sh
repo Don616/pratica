@@ -48,9 +48,13 @@ instalar_pacotes(){
 
 	echo "\nInstalando e verificando todos os pacotes...\n"
 	sleep 1
+	echo "Dando update nos arquivos..."
 	sudo apt-get update && sudo apt-get upgrade -y
+	echo "Verificando java..."
 	[ ! -x $(which java) ] && sudo apt-get install openjdk-11-jdk
+	echo "Instalando interface gráfica"
 	sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
+	echo "Verificando git..."
 	[ ! -x $(which git) ] && sudo apt-get install git-all
 
 }
@@ -58,12 +62,9 @@ criar_urubu100(){
 
 	echo "\nCriando usuário urubu100...\n"
 	sleep 1
-	sudo su
-	exit
 	adduser urubu100
+	echo "Dando permissão de sudo para urubu100..."
 	usermod -aG sudo urubu100
-	su urubu100
-	exit
 	cd
 
 }
@@ -72,7 +73,8 @@ clonar_github(){
 
 	echo "\nClonando github e criando pastas...\n"
 	cd
-	wget https://github.com/leticiaNCosta18/TotemSystem/blob/main/Java/totemSistem/out/artifacts/totemSitem_jar/totemSitem.jar
+	wget -i https://github.com/leticiaNCosta18/TotemSystem/blob/main/Java/totemSistem/out/artifacts/totemSitem_jar/totemSitem.jar
+	echo "Criando uma pasta para o projeto..."
 	mkdir totem && mv ./totemSitem.jar totem/totemsystem.jar && cd totem
 	echo "\nTudo pronto meu chefe...\n"
 }
