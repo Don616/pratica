@@ -74,20 +74,20 @@ clonar_github(){
 
 
 	echo "\nClonando github e criando pastas...\n"
-	wget -O totemSitem.jar https://github.com/leticia-NCosta/TotemSystem/blob/main/Java/totemSistem/out/artifacts/totemSitem_jar/totemSitem.jar 
+	wget -O totemSitem.jar https://github.com/leticia-NCosta/TotemSystem/raw/main/Java/totemSistem/out/artifacts/totemSitem_jar/totemSitem.jar 
 	echo "Criando uma pasta para o projeto..."
 	mkdir totem && mv ./totemSitem.jar totem/totemsystem.jar && cd totem
 	echo "\nTudo pronto meu chefe...\n"
 }
 instalar_docker(){
 
-	sudo apt-get install apt-transport-https ca-certificates curl gnupg software-properties-common
-	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-	sudo apt install docker-ce
-	sudo systemctl enable docker
+	sudo apt install docker.io
 	sudo systemctl start docker
-
+	sudo systemctl enable  docker
+	sudo docker pull mysql:latest
+	sudo docker run -d -p 3306:3306 --name totemsystem -e "MYSQL_DATABASE=totemsystem" -e "MYSQL_ROOT_PASSWORD=urubu100" mysql:latest
+	sudo docker exec -it totemsystem bash
+	
 }
 
 main(){
