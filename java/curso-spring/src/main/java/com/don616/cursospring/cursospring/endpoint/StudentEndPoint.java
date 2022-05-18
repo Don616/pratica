@@ -14,14 +14,14 @@ import java.util.List;
 import static java.util.Arrays.asList;
 
 @RestController
-@RequestMapping("student")
+@RequestMapping("students")
 @ComponentScan
 public class StudentEndPoint {
 
     @Autowired
     private DateUtil dateUtil;
 
-    @RequestMapping(method = RequestMethod.GET, path = "/list")
+    @RequestMapping(method = RequestMethod.GET)
     public List<Student> listAll(){
 
         System.out.println(dateUtil.formatLocalDateTimeToDatabaseStyle(LocalDateTime.now()));

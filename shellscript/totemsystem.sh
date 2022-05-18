@@ -56,6 +56,8 @@ instalar_pacotes(){
 	sudo apt-get install xrdp lxde-core lxde tigervnc-standalone-server -y
 	echo "Verificando git..."
 	[ ! -x $(which git) ] && sudo apt-get install git-all
+	echo "Verificando docker..."
+	[ ! -x $(which docker) ] && instalar_docker
 
 }
 criar_urubu100(){
@@ -65,18 +67,27 @@ criar_urubu100(){
 	adduser urubu100
 	echo "Dando permissão de sudo para urubu100..."
 	usermod -aG sudo urubu100
-	cd
+	
 
 }
 clonar_github(){
 
 
 	echo "\nClonando github e criando pastas...\n"
-	cd
-	wget -i https://github.com/leticiaNCosta18/TotemSystem/blob/main/Java/totemSistem/out/artifacts/totemSitem_jar/totemSitem.jar
+	wget -O totemSitem.jar https://github.com/leticia-NCosta/TotemSystem/blob/main/Java/totemSistem/out/artifacts/totemSitem_jar/totemSitem.jar 
 	echo "Criando uma pasta para o projeto..."
 	mkdir totem && mv ./totemSitem.jar totem/totemsystem.jar && cd totem
 	echo "\nTudo pronto meu chefe...\n"
+}
+instalar_docker(){
+
+	sudo apt-get install apt-transport-https ca-certificates curl gnupg software-properties-common
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+	sudo apt install docker-ce
+	sudo systemctl enable docker
+	sudo systemctl start docker
+
 }
 
 main(){
