@@ -1,0 +1,46 @@
+version: '3.7'
+services:
+  app1:
+    build:
+      context: ./app1
+      dockerfile: Dockerfile
+    container_name: app1
+    ports:
+      - "8081:80"
+    networks:
+      - "gateway"
+
+  app2:
+    build:
+      context: ./app2
+      dockerfile: Dockerfile
+    container_name: app2
+    ports:  
+      - "8082:80"
+    networks:
+      - "gateway"
+
+  app3:
+    build:
+      context: ./app3
+      dockerfile: Dockerfile
+    container_name: app3
+    ports:
+      - "8083:80"
+    networks:
+      - "gateway"
+
+  main:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: main
+    ports:
+      - "8080:80"
+    networks:
+      - "gateway"
+    depends_on:
+        - "app1"
+        - "app2"
+        - "app3"
+networks:
+  gateway:
